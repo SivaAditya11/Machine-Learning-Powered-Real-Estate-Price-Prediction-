@@ -48,7 +48,7 @@ Contributions are welcome! If you find any issues or have suggestions, feel free
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## ⭐ Acknowledgments
-- Dataset source: [Kaggle/UCI Repository/Other]
+- Dataset source: Kaggle(California Housing Prices dataset)
 - Open-source libraries used in the project.
 
 If you find this project useful, please ⭐ the repository!
