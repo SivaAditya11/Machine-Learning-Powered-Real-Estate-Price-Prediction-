@@ -49,6 +49,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## ⭐ Acknowledgments
 - Dataset source: Kaggle(California Housing Prices dataset)
+- Link: https://www.kaggle.com/datasets/camnugent/california-housing-prices
 - Open-source libraries used in the project.
 
 If you find this project useful, please ⭐ the repository!
