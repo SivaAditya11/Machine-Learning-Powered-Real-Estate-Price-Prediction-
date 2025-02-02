@@ -27,7 +27,7 @@ The dataset used in this project contains features such as:
 
 ## 🚀 How to Run the Project
 1. Clone the repository:
-   git clone https://https://github.com/SivaAditya11/Project1/edit/main/README.md
+   git clone https://https://https://github.com/SivaAditya11/Machine-Learning-Powered-Real-Estate-Price-Prediction-/tree/main/archive
 
 2. Install the required dependencies:
    pip install -r requirements.txt
