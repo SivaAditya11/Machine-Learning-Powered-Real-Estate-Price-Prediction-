@@ -31,9 +31,7 @@ def append_input_data(data_frame, input_data):
     
     new_data = {'longitude': [longitude], 'latitude': [latitude], 'housing_median_age': [housing_median_age],
                 'total_rooms': [total_rooms], 'total_bedrooms': [total_bedrooms], 'population': [population],
-                'households': [households], 'median_income': [median_income], '<1H OCEAN': [ocean], 'INLAND': [inland],
-                'ISLAND': [island], 'NEAR BAY': [near_bay], 'NEAR OCEAN': [near_ocean],
-                'bedroom_ratio': [bedroom_ratio], 'household_rooms': [household_rooms] }
+                'households': [households], 'median_income': [median_income], '<1H OCEAN': [ocean], 'NEAR BAY': [near_bay] }
 
     new_df = pd.DataFrame(new_data)
     updated_df = pd.concat([data_frame, new_df], ignore_index=True)
@@ -41,8 +39,7 @@ def append_input_data(data_frame, input_data):
 
 data = {'longitude' : [], 'latitude' : [], 'housing_median_age' : [], 'total_rooms': [],
        'total_bedrooms' : [], 'population' : [], 'households' : [], 'median_income' : [],
-       '<1H OCEAN' : [], 'INLAND' : [], 'ISLAND' : [], 'NEAR BAY' : [],
-       'NEAR OCEAN' : [], 'bedroom_ratio' : [], 'household_rooms' : []}
+       '<1H OCEAN' : [], 'NEAR BAY' : []}
 df = pd.DataFrame(data)
 
 
@@ -86,9 +83,7 @@ def main():
     
     if st.button('Check Price'):
         price = House_Price_Prediction([Longitude, Latitude, HousingMedianAge,
-                                        TotalRooms, TotalBedrooms, Population, Households, MedianIncome,
-                                        LessThanAnHourToTheOcean, INLAND, ISLAND, NEARBAY,
-                                        NEAROCEAN, BedroomRatio, HouseholdRooms])
+                                        TotalRooms, TotalBedrooms, Population, Households, MedianIncome, LessThanAnHourToTheOcean, NEARBAY])
     st.success(price)    
 
 
