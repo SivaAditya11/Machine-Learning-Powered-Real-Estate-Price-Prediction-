@@ -80,13 +80,7 @@ def main():
     Population = st.text_input('Total Number Of People Residing In The Area')
     Households = st.text_input('Total Number Of Households In The Area')
     MedianIncome = st.text_input('Median Income Of Residents In the Area')
-    LessThanAnHourToTheOcean = st.text_input('Is Building Less Than An Hour To The Ocean')
-    INLAND = st.text_input('Is It INLAND? Write (1) if yes or (0) if No')
-    ISLAND = st.text_input('Is It On An ISLAND? Write (1) if yes or (0) if No')
     NEARBAY = st.text_input('Is It NEAR A BAY? Write (1) if yes or (0) if No')
-    NEAROCEAN = st.text_input('Is It NEAR An OCEAN? Write (1) if yes or (0) if No')
-    BedroomRatio = st.text_input('Bedroom Ratio? Total Bedrooms / Total Rooms')
-    HouseholdRooms = st.text_input('Total Number Of Household rooms In The Area')
     
     price = ''
     
