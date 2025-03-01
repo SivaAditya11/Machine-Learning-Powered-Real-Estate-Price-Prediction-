@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import pickle
+import os
 import streamlit as st
 
 class CustomScaler:
@@ -19,6 +20,8 @@ class CustomScaler:
         scaled_columns_df = pd.DataFrame(selected_columns_scaled, columns=self.columns_to_scale, index=data.index)
         scaled_data[self.columns_to_scale] = scaled_columns_df
         return scaled_data
+model_path = os.path.join(os.getcwd(),"Prediction_Model.pkl")
+scaler_path = os.path.join(os.getcwd(),"Prediction_Scaler.pkl")    
 
 loaded_model = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Model.pkl", 'rb'))
 loaded_scaler = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Scaler.pkl", 'rb'))
@@ -89,4 +92,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
     
