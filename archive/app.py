@@ -23,8 +23,8 @@ class CustomScaler:
 model_path = os.path.join(os.getcwd(),"Prediction_Model.pkl")
 scaler_path = os.path.join(os.getcwd(),"Prediction_Scaler.pkl")    
 
-loaded_model = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Model.pkl", 'rb'))
-loaded_scaler = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Scaler.pkl", 'rb'))
+loaded_model = pickle.load(open("C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Model.pkl", 'rb'))
+loaded_scaler = pickle.load(open("C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Scaler.pkl", 'rb'))
 
 def append_input_data(data_frame, input_data):
     
