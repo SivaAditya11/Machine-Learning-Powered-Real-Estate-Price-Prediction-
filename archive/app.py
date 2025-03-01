@@ -21,7 +21,12 @@ class CustomScaler:
         scaled_data[self.columns_to_scale] = scaled_columns_df
         return scaled_data
 model_path = os.path.join(os.getcwd(),"Prediction_Model.pkl")
-scaler_path = os.path.join(os.getcwd(),"Prediction_Scaler.pkl")    
+scaler_path = os.path.join(os.getcwd(),"Prediction_Scaler.pkl")
+
+with open(model_path, 'rb') as file:
+    loaded_model = pickle.load(file)
+with open(scaler_path, 'rb') as file:
+    loaded_scaler = pickle.load(file)
 
 loaded_model = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Model.pkl", 'rb'))
 loaded_scaler = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Scaler.pkl", 'rb'))
