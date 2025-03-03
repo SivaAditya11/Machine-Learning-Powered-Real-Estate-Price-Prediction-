@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import pickle
-import os
 import streamlit as st
 
 class CustomScaler:
@@ -20,13 +19,6 @@ class CustomScaler:
         scaled_columns_df = pd.DataFrame(selected_columns_scaled, columns=self.columns_to_scale, index=data.index)
         scaled_data[self.columns_to_scale] = scaled_columns_df
         return scaled_data
-model_path = os.path.join(os.getcwd(),"Prediction_Model.pkl")
-scaler_path = os.path.join(os.getcwd(),"Prediction_Scaler.pkl")
-
-with open(model_path, 'rb') as file:
-    loaded_model = pickle.load(file)
-with open(scaler_path, 'rb') as file:
-    loaded_scaler = pickle.load(file)
 
 loaded_model = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Model.pkl", 'rb'))
 loaded_scaler = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Prediction_Scaler.pkl", 'rb'))
@@ -34,12 +26,12 @@ loaded_scaler = pickle.load(open(r"C:\Users\lenovo\Desktop\Aditya\archive\Predic
 def append_input_data(data_frame, input_data):
     
     longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, \
-    median_income, ocean, inland, island, near_bay, near_ocean, bedroom_ratio, household_rooms = input_data
+    median_income, near_bay,  = input_data
 
     
     new_data = {'longitude': [longitude], 'latitude': [latitude], 'housing_median_age': [housing_median_age],
                 'total_rooms': [total_rooms], 'total_bedrooms': [total_bedrooms], 'population': [population],
-                'households': [households], 'median_income': [median_income], '<1H OCEAN': [ocean], 'NEAR BAY': [near_bay] }
+                'households': [households], 'median_income': [median_income], 'NEAR BAY': [near_bay]}
 
     new_df = pd.DataFrame(new_data)
     updated_df = pd.concat([data_frame, new_df], ignore_index=True)
@@ -47,7 +39,8 @@ def append_input_data(data_frame, input_data):
 
 data = {'longitude' : [], 'latitude' : [], 'housing_median_age' : [], 'total_rooms': [],
        'total_bedrooms' : [], 'population' : [], 'households' : [], 'median_income' : [],
-       '<1H OCEAN' : [], 'NEAR BAY' : []}
+       '<1H OCEAN' : [], 'INLAND' : [], 'ISLAND' : [], 'NEAR BAY' : [],
+       'NEAR OCEAN' : [], 'bedroom_ratio' : [], 'household_rooms' : []}
 df = pd.DataFrame(data)
 
 
@@ -86,16 +79,17 @@ def main():
     Households = st.text_input('Total Number Of Households In The Area')
     MedianIncome = st.text_input('Median Income Of Residents In the Area')
     NEARBAY = st.text_input('Is It NEAR A BAY? Write (1) if yes or (0) if No')
+   
     
     price = ''
     
     if st.button('Check Price'):
         price = House_Price_Prediction([Longitude, Latitude, HousingMedianAge,
-                                        TotalRooms, TotalBedrooms, Population, Households, MedianIncome, LessThanAnHourToTheOcean, NEARBAY])
+                                        TotalRooms, TotalBedrooms, Population, Households, MedianIncome,
+                                        NEARBAY])
     st.success(price)    
 
 
 if __name__ == '__main__':
     main()
-    
     
