@@ -68,7 +68,7 @@ def House_Price_Prediction(input_data):
 
 def main():
     
-    st.title('House Price Prediction Web App')
+    st.title('House Price Prediction Website')
     
     Longitude = st.text_input('Longitude Coordinate')
     Latitude = st.text_input('Latitude Coordinate')
